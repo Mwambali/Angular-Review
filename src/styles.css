@@ -34,3 +34,20 @@ body {
 .bg-theme {
     background-color: var(--primary-color);
 }
+
+input[type=text],
+input[type=email] {
+    height: 60px;
+    padding-left: 20px;
+    font-size: 13px;
+    width: 100%;
+
+}
+
+.btn-theme {
+    height: 58px;
+    border: none;
+    color: var(--secondary-color);
+    font-size: 13px;
+    background-color: var(--primary-color);
+}
