@@ -6,9 +6,11 @@ import { ContactUsComponent } from './pages/contact-us/contact-us.component';
 import { TermsAndConditionsComponent } from './pages/terms-and-conditions/terms-and-conditions.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { SingleCategoryComponent } from './pages/single-category/single-category.component';
+import { LoginComponent } from './auth/components/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
+  { path: 'login', component: LoginComponent },
   { path: 'category', component: SingleCategoryComponent },
   { path: 'post', component: SinglePostComponent },
 

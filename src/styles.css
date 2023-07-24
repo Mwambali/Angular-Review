@@ -44,10 +44,11 @@ body {
 }
 
 input[type=text],
-input[type=email] {
+input[type=email],
+input[type=password] {
     height: 60px;
     padding-left: 20px;
-    font-size: 13px;
+    /* font-size: 13px; */
     width: 100%;
 
 }
@@ -56,6 +57,6 @@ input[type=email] {
     height: 58px;
     border: none;
     color: var(--secondary-color);
-    font-size: 13px;
+    /* font-size: 13px; */
     background-color: var(--primary-color);
 }

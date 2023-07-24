@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -16,6 +17,8 @@ import { CommentListComponent } from './comments/comment-list/comment-list.compo
 import { SingleCategoryComponent } from './pages/single-category/single-category.component';
 import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { PostCardComponent } from './layouts/post-card/post-card.component';
+import { LoginComponent } from './auth/components/login/login.component';
+import { RegisterComponent } from './auth/components/register/register.component';
 
 @NgModule({
   declarations: [
@@ -32,10 +35,13 @@ import { PostCardComponent } from './layouts/post-card/post-card.component';
     CommentListComponent,
     SingleCategoryComponent,
     AboutUsComponent,
-    PostCardComponent
+    PostCardComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     AppRoutingModule
   ],
   providers: [],
