@@ -75,3 +75,45 @@
     <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
 
 </form>
+<!-- 
+<div class="container">
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card p-5 shadow-effect bg-secondary-theme">
+                <div class="card-body">
+                    <div class="text-center">
+                        <h3 class="text-theme-primary"> Login </h3>
+                        <p> Please Login to your Admin account to post new Blog posts </p>
+                    </div>
+
+                    <form #loginForm="ngForm" (ngSubmit)="submit()">
+                        <div class="form-group">
+                            <input type="email" class="form-control" placeholder="Email" name="email" #Email="ngModel"
+                                [(ngModel)]="form.value.email" required email
+                                [ngClass]="{'is-invalid': Email.touched && Email.invalid}">
+
+                            <div class="alert alert-danger" *ngIf="Email.touched && Email.invalid">
+                                <div *ngIf="Email.errors?.['required']">Email is required</div>
+                                <div *ngIf="Email.errors?.['email']">Invalid email format</div>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <input type="password" class="form-control" placeholder="Password" name="password"
+                                #Password="ngModel" [(ngModel)]="form.value.password" required
+                                [ngClass]="{'is-invalid': Password.touched && Password.invalid}">
+
+                            <div class="alert alert-danger" *ngIf="Password.touched && Password.invalid">Password
+                                Cannot be Empty</div>
+                        </div>
+
+                        <button class="btn btn-info btn-block btn-theme" [disabled]="loginForm.invalid"
+                            type="submit">Login</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div> -->

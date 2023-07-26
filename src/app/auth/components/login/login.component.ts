@@ -34,7 +34,9 @@ export class LoginComponent implements OnInit {
     const password = this.form.get('password')?.value;
     this.authService.login(email, password) // Pass email and password as separate parameters
       .subscribe(
-        (response) => {
+        (response: any) => {
+          console.log(response.data);
+
           // Redirect to the desired route
           this.router.navigate(['/']);
         }
