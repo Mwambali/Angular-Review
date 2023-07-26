@@ -39,9 +39,10 @@ export class AuthService {
     return !!token;
   }
 
-  logout(): void {
+  logout(): boolean {
     // Remove the token from localStorage upon logout
     localStorage.removeItem(this.TOKEN_KEY);
+    return true; // Return true for successful logout
   }
 }
 
