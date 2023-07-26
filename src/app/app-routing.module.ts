@@ -8,18 +8,28 @@ import { AboutUsComponent } from './pages/about-us/about-us.component';
 import { SingleCategoryComponent } from './pages/single-category/single-category.component';
 import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
+import { AuthGuard } from './auth/services/auth.guard';
+import { LayoutComponent } from './layouts/layout/layout.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
 
-  { path: 'category', component: SingleCategoryComponent },
-  { path: 'post', component: SinglePostComponent },
+  {
+    path: '',
+    component: LayoutComponent,
+    canActivate: [AuthGuard],
+    children: [
+      { path: '', component: HomeComponent },
+      { path: 'category', component: SingleCategoryComponent },
+      { path: 'post', component: SinglePostComponent },
 
-  { path: 'about', component: AboutUsComponent },
-  { path: 'terms-conditions', component: TermsAndConditionsComponent },
-  { path: 'contact', component: ContactUsComponent }
+      { path: 'about', component: AboutUsComponent },
+      { path: 'terms-conditions', component: TermsAndConditionsComponent },
+      { path: 'contact', component: ContactUsComponent }
+    ]
+  }
+
 ];
 
 @NgModule({

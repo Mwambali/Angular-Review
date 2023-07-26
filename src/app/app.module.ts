@@ -21,6 +21,7 @@ import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './auth/auth.interceptor';
+import { LayoutComponent } from './layouts/layout/layout.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { TokenInterceptor } from './auth/auth.interceptor';
     AboutUsComponent,
     PostCardComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    LayoutComponent
   ],
   imports: [
     BrowserModule,
