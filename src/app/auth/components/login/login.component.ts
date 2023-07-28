@@ -37,7 +37,7 @@ export class LoginComponent implements OnInit {
           console.log(response.data);
 
           // Redirect to the desired route
-          this.router.navigate(['/']);
+          this.router.navigate(['/landing']);
         }
       );
   }

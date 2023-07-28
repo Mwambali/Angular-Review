@@ -1,0 +1,46 @@
+/* Add custom styles for the home component here */
+
+.home__wrapper {
+    background: #fff;
+    padding: 12px;
+    display: grid;
+    grid-template-columns: 45% 55%;
+}
+
+.home__left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding-right: 12px;
+
+    img {
+        width: auto;
+        /* Adjust the width of the avatar as needed */
+        height: auto;
+        /* Adjust the height of the avatar as needed */
+        border-radius: 50%;
+        /* Make the avatar circular */
+        object-fit: cover;
+        /* Ensure the avatar fills the container without distortion */
+        margin-bottom: 16px;
+        /* Add margin at the bottom of the avatar */
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+
+        li {
+            font-size: 13px;
+            margin-bottom: 5px;
+        }
+    }
+}
+
+/* The rest of your styles for the home component */

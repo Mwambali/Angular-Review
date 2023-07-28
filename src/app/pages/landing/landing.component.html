@@ -1,1 +1,49 @@
-<p>landing works!</p>
+<div class="container">
+    <div class="home__wrapper">
+        <div class="home__left">
+            <img [src]="avatar" alt="Avatar" />
+
+            <h1>App Actions</h1>
+            <ul>
+                <li>Create & Manage Courses</li>
+                <li>Create & Manage Classes</li>
+                <li>Create & Manage Students</li>
+            </ul>
+        </div>
+
+        <div class="home__actions">
+            <!-- <ng-container *ngIf="courses.length > 0; else noCourses"> -->
+            <ng-container>
+
+                <div class="home__action">
+                    <a routerLink="/create-course">
+                        <button>Create a course</button>
+                    </a>
+                </div>
+                <div class="home__action">
+                    <a routerLink="/create-class">
+                        <button>Create a class</button>
+                    </a>
+                </div>
+                <div class="home__action">
+                    <a routerLink="/create-student">
+                        <button>Add a student</button>
+                    </a>
+                </div>
+                <div class="home__manager">
+                    <a routerLink="/students">Manage Students</a>
+                    <a routerLink="/classes">Manage Classes</a>
+                    <a routerLink="/courses">Manage Courses</a>
+                </div>
+            </ng-container>
+            <!-- <ng-template #noCourses>
+                <div>
+                    <h3>No Course Available</h3>
+                    <a routerLink="/create-course">
+                        <h4>Create a Course</h4>
+                    </a>
+                </div>
+            </ng-template> -->
+        </div>
+    </div>
+</div>

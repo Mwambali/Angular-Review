@@ -10,6 +10,7 @@ import { LoginComponent } from './auth/components/login/login.component';
 import { RegisterComponent } from './auth/components/register/register.component';
 import { AuthGuard } from './auth/services/auth.guard';
 import { LayoutComponent } from './layouts/layout/layout.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -17,10 +18,11 @@ const routes: Routes = [
 
   {
     path: '',
-    component: LayoutComponent,
+    // component: LayoutComponent,
     canActivate: [AuthGuard],
     children: [
       { path: '', component: HomeComponent },
+      { path: 'landing', component: LandingComponent },
       { path: 'category', component: SingleCategoryComponent },
       { path: 'post', component: SinglePostComponent },
 
