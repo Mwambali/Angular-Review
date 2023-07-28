@@ -1,4 +1,76 @@
-<form [formGroup]="form" (submit)="submit()">
+<div class="container mt-2">
+    <div class="row justify-content-center">
+        <div class="col-md-5">
+            <div class="card p-4 border shadow-effect">
+                <form [formGroup]="form" (submit)="submit()">
+                    <h4 class="mb-4 fw-bold">Create account</h4>
+
+                    <div class="mb-2">
+                        <label for="firstName" class=" mb-2">First Name</label>
+                        <input formControlName="firstName" type="text" class="form-control"
+                            placeholder="Enter your first name" required />
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="lastName" class="mb-2">Last Name</label>
+                        <input formControlName="lastName" type="text" class="form-control"
+                            placeholder="Enter your last name" required />
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="email" class="mb-2">Email</label>
+                        <input formControlName="email" type="email" class="form-control" placeholder="Enter your email"
+                            required />
+                        <div *ngIf="form.get('email')?.touched && form.get('email')?.invalid"
+                            class="invalid-feedback d-block">
+                            <div *ngIf="form.get('email')?.errors?.['required']">Email is required</div>
+                            <div *ngIf="form.get('email')?.errors?.['email']">Invalid email format</div>
+                        </div>
+                    </div>
+
+                    <div class="mb-2">
+                        <label for="password" class="mb-2">Password</label>
+                        <input formControlName="password" type="password" class="form-control"
+                            placeholder="Minimum 6 characters required" required />
+                        <div *ngIf="form.get('password')?.touched && form.get('password')?.invalid"
+                            class="invalid-feedback d-block">
+                            Password Cannot be Empty
+                        </div>
+                    </div>
+
+                    <div class="d-grid gap-2 mt-2">
+                        <button type="submit" class="btn btn-light btn-block btn-theme mt-2">Submit</button>
+                    </div>
+                </form>
+
+                <div class="mt-3">
+                    <small>
+                        <span>By creating an account, you agree to Our</span>
+                    </small>
+                </div>
+
+                <div>
+                    <small>
+                        <a href="#" class="text-decoration-none">Conditions of use</a> and <a href="#"
+                            style="text-decoration: none;">Privacy policy</a>
+                    </small>
+                </div>
+
+                <hr class="mt-4 mb-4">
+
+                <div>
+                    <small>
+                        Already have an account? <a routerLink="/signin" class="text-decoration-none">Sign-in</a>
+                    </small>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- <form [formGroup]="form" (submit)="submit()">
     <h1 class="h3 mb-3 fw-normal"> Please Register</h1>
 
     <input formControlName="firstName" type="text" class="form-control" placeholder="Name" required>
@@ -11,4 +83,4 @@
 
     <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
 
-</form>
+</form> -->

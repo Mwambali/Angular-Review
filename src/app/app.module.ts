@@ -22,6 +22,7 @@ import { RegisterComponent } from './auth/components/register/register.component
 import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './auth/auth.interceptor';
 import { LayoutComponent } from './layouts/layout/layout.component';
+import { LandingComponent } from './pages/landing/landing.component';
 
 @NgModule({
   declarations: [
@@ -41,7 +42,8 @@ import { LayoutComponent } from './layouts/layout/layout.component';
     PostCardComponent,
     LoginComponent,
     RegisterComponent,
-    LayoutComponent
+    LayoutComponent,
+    LandingComponent
   ],
   imports: [
     BrowserModule,
