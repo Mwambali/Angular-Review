@@ -23,6 +23,7 @@ import { HTTP_INTERCEPTORS, HttpClientModule } from '@angular/common/http';
 import { TokenInterceptor } from './auth/auth.interceptor';
 import { LayoutComponent } from './layouts/layout/layout.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { ViewClassComponent } from './components/classes/view-class/view-class.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,8 @@ import { LandingComponent } from './pages/landing/landing.component';
     LoginComponent,
     RegisterComponent,
     LayoutComponent,
-    LandingComponent
+    LandingComponent,
+    ViewClassComponent
   ],
   imports: [
     BrowserModule,

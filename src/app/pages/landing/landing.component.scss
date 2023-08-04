@@ -1,3 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+body {
+    background: #f0f6fa;
+    /* Light blue */
+}
+
+.app-body {
+    margin-top: 150px;
+    min-height: 35vh;
+    /* 35vh */
+}
+
+.container {
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
 /* Add custom styles for the home component here */
 
 .home__wrapper {
@@ -13,34 +37,76 @@
     justify-content: center;
     flex-direction: column;
     padding-right: 12px;
-
-    img {
-        width: auto;
-        /* Adjust the width of the avatar as needed */
-        height: auto;
-        /* Adjust the height of the avatar as needed */
-        border-radius: 50%;
-        /* Make the avatar circular */
-        object-fit: cover;
-        /* Ensure the avatar fills the container without distortion */
-        margin-bottom: 16px;
-        /* Add margin at the bottom of the avatar */
-    }
-
-    h1 {
-        font-size: 20px;
-    }
-
-    ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-
-        li {
-            font-size: 13px;
-            margin-bottom: 5px;
-        }
-    }
 }
 
-/* The rest of your styles for the home component */
+.home__left h1 {
+    font-size: 20px;
+}
+
+.home__left img {
+    width: 200px;
+    height: 100px;
+}
+
+.home__left ul li {
+    font-size: 13px;
+    margin-bottom: 5px;
+}
+
+.home__actions {
+    display: flex;
+    flex-direction: column;
+}
+
+.home__action {
+    margin: 10px 0px;
+}
+
+.home__action button {
+    cursor: pointer;
+    background-color: #f0f6fa;
+    /* Light blue */
+    border-radius: 3px;
+    width: 100%;
+    padding: 20px 10px;
+    border: 2px solid #ccc;
+    font-size: 18px;
+    color: #000;
+}
+
+/* Hover effect */
+.home__action button:hover {
+    background-color: #d8e5eb;
+    /* Light blue - lighter shade */
+}
+
+.home__manager {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    margin-top: 20px;
+    color: #000;
+    font-size: 15px;
+}
+
+.home__manager a {
+    text-decoration: unset;
+    color: #000;
+    font-weight: bold;
+}
+
+/* Responsive design */
+
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .home__wrapper {
+        grid-template-columns: 100%;
+    }
+
+    .home__left {
+        padding-right: 0;
+    }
+}
