@@ -11,6 +11,7 @@ import { RegisterComponent } from './auth/components/register/register.component
 import { AuthGuard } from './auth/services/auth.guard';
 import { LayoutComponent } from './layouts/layout/layout.component';
 import { LandingComponent } from './pages/landing/landing.component';
+import { ViewClassComponent } from './components/classes/view-class/view-class.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -18,13 +19,15 @@ const routes: Routes = [
 
   {
     path: '',
-    component: LayoutComponent,
+    // component: LayoutComponent,
     canActivate: [AuthGuard],
     children: [
       { path: '', component: HomeComponent },
       { path: 'landing', component: LandingComponent },
       { path: 'category', component: SingleCategoryComponent },
       { path: 'post', component: SinglePostComponent },
+      { path: 'view-class', component: ViewClassComponent },
+
 
       { path: 'about', component: AboutUsComponent },
       { path: 'terms-conditions', component: TermsAndConditionsComponent },
