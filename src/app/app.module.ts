@@ -24,6 +24,11 @@ import { TokenInterceptor } from './auth/auth.interceptor';
 import { LayoutComponent } from './layouts/layout/layout.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ViewClassComponent } from './components/classes/view-class/view-class.component';
+import { ViewStudentComponent } from './components/students/view-student/view-student.component';
+import { ViewCourseComponent } from './components/courses/view-course/view-course.component';
+import { CreateCourseComponent } from './components/courses/create-course/create-course.component';
+import { CreateClassComponent } from './components/classes/create-class/create-class.component';
+import { AllocateStudentsComponent } from './components/students/allocate-students/allocate-students.component';
 
 @NgModule({
   declarations: [
@@ -45,7 +50,12 @@ import { ViewClassComponent } from './components/classes/view-class/view-class.c
     RegisterComponent,
     LayoutComponent,
     LandingComponent,
-    ViewClassComponent
+    ViewClassComponent,
+    ViewStudentComponent,
+    ViewCourseComponent,
+    CreateCourseComponent,
+    CreateClassComponent,
+    AllocateStudentsComponent
   ],
   imports: [
     BrowserModule,
