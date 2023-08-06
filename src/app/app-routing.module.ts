@@ -12,6 +12,7 @@ import { AuthGuard } from './auth/services/auth.guard';
 import { LayoutComponent } from './layouts/layout/layout.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ViewClassComponent } from './components/classes/view-class/view-class.component';
+import { ViewCourseComponent } from './components/courses/view-course/view-course.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -27,6 +28,7 @@ const routes: Routes = [
       { path: 'category', component: SingleCategoryComponent },
       { path: 'post', component: SinglePostComponent },
       { path: 'view-class', component: ViewClassComponent },
+      { path: 'view-course', component: ViewCourseComponent },
 
 
       { path: 'about', component: AboutUsComponent },

@@ -1,7 +1,7 @@
 <div class="container app-body">
     <div class="one__student">
         <div class="one__student__left">
-            <img src="{{ courseDetail?.avatarUrl }}" alt="Avatar" />
+            <img [src]="generator.generateRandomAvatar()" alt="Avatar" />
             <div class="detail">
                 <h1>{{ courseDetail?.courseName?.toUpperCase() }}</h1>
             </div>
