@@ -1,1 +1,44 @@
-<p>create-class works!</p>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12 bg-seconday-theme p-5 shadow-effect">
+            <h3 class="text-center text-theme-primary"> Create New Class</h3>
+            <p class="text-center mb-5">You can add new a new class from Here ..!</p>
+
+            <form class="row text-center" #categoryForm='ngForm' (ngSubmit)="onSubmit(categoryForm)">
+                <div class="form-group col-md-10">
+                    <input name="category" type="text" class="form-control shadow-effect" placeholder="Add New Class"
+                        ngModel>
+                </div>
+
+                <div class="col-md-2">
+                    <button class="btn btn-block btn-info mb-2 btn-theme">Add Class</button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+    <div class="row mt-5 mb-5">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <div class="card shadow-effect">
+                <div class="card-body">
+                    <table class="table row-border hover">
+                        <thead>
+                            <tr>
+                                <th>Created</th>
+                                <th>Name</th>
+                                <th>Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-3"></div>
+    </div>
+</div>

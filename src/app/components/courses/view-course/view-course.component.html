@@ -1,1 +1,32 @@
-<p>view-course works!</p>
+<div class="container app-body">
+    <div class="one__student">
+        <div class="one__student__left">
+            <img src="{{ courseDetail?.avatarUrl }}" alt="Avatar" />
+            <div class="detail">
+                <h1>{{ courseDetail?.courseName?.toUpperCase() }}</h1>
+            </div>
+        </div>
+        <div class="one__student__right">
+            <ul>
+                <li><span>Name</span>: {{ courseDetail?.courseName?.toUpperCase() }}</li>
+                <li>
+                    <h3>Course Students</h3>
+                    <ng-container *ngIf="courseStudents.length > 0; else noStudents">
+                        <ol>
+                            <li *ngFor="let student of courseStudents">{{ student }}</li>
+                        </ol>
+                    </ng-container>
+                    <ng-template #noStudents>
+                        <div>
+                            <h6>No Students Assigned Yet</h6>
+                        </div>
+                    </ng-template>
+                </li>
+            </ul>
+            <div class="one__actions">
+                <a [routerLink]="'/course/update/' + courseDetail?.id">Update Course</a>
+                <button class="del-btn" (click)="onDelete()">Delete Course</button>
+            </div>
+        </div>
+    </div>
+</div>
