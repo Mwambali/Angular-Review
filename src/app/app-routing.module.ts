@@ -13,6 +13,7 @@ import { LayoutComponent } from './layouts/layout/layout.component';
 import { LandingComponent } from './pages/landing/landing.component';
 import { ViewClassComponent } from './components/classes/view-class/view-class.component';
 import { ViewCourseComponent } from './components/courses/view-course/view-course.component';
+import { ViewStudentComponent } from './components/students/view-student/view-student.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -27,8 +28,10 @@ const routes: Routes = [
       { path: 'landing', component: LandingComponent },
       { path: 'category', component: SingleCategoryComponent },
       { path: 'post', component: SinglePostComponent },
-      { path: 'view-class', component: ViewClassComponent },
-      { path: 'view-course', component: ViewCourseComponent },
+      { path: 'view-class/:id', component: ViewClassComponent },
+      { path: 'view-course/:id', component: ViewCourseComponent },
+      { path: 'view-student/:id', component: ViewStudentComponent },
+
 
 
       { path: 'about', component: AboutUsComponent },

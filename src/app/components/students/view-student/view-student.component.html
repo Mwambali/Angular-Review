@@ -1,1 +1,24 @@
-<p>view-student works!</p>
+<div class="container app-body">
+    <div class="one__student">
+        <div class="one__student__left">
+            <img [src]="generator.generateRandomAvatar()" alt="Avatar" />
+            <div class="detail">
+                <h1>{{ studentDetail?.studentName?.toUpperCase() }}</h1>
+            </div>
+        </div>
+        <div class="one__student__right">
+            <ul>
+                <li><span>Name</span>: {{ studentDetail?.studentName?.toUpperCase() }}</li>
+                <li><span>Age</span>: {{ studentDetail?.studentAge }}</li>
+                <li><span>Class</span>: {{ studentDetail?.studentClass?.toUpperCase() }}</li>
+                <li><span>Courses</span>: {{ studentDetail?.studentCourse?.join(', ') }}</li>
+                <li><span>Total Number Courses</span>: {{ totalCourse }}</li>
+            </ul>
+
+            <div class="one__actions">
+                <a [routerLink]="'/student/update/' + studentDetail?.id">Update student records</a>
+                <button class="del-btn" (click)="onDelete(studentDetail?.id)">Delete student records</button>
+            </div>
+        </div>
+    </div>
+</div>

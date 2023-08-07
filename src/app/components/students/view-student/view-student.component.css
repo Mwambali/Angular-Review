@@ -1,0 +1,102 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+body {
+    background: #f0f6fa;
+    /* Light blue */
+}
+
+.app-body {
+    margin-top: 150px;
+    min-height: 35vh;
+    /* 35vh */
+}
+
+.container {
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.one__student {
+    background-color: #f0f6fa;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    padding-top: 20px;
+}
+
+.one__student__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.one__student__left img {
+    width: 150px;
+}
+
+.one__student__left h1 {
+    font-size: 18px;
+    margin-top: 20px;
+}
+
+.one__student__right ul li {
+    margin-bottom: 10px;
+}
+
+.one__student__right span {
+    font-size: 15px;
+}
+
+.detail {
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.detail h1 {
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.one__actions {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.one__actions a {
+    margin-right: 20px;
+    color: #000;
+    font-weight: bold;
+    text-transform: capitalize;
+    text-decoration: none;
+}
+
+.del-btn {
+    border: unset;
+    padding: 5px 10px;
+    background-color: #000;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.del-btn:hover {
+    background-color: #d8e5eb;
+    color: #000;
+    /* Light blue - lighter shade */
+}
+
+.one__actions a:hover {
+    text-decoration: unset;
+    color: white;
+    font-weight: bold;
+}

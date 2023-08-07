@@ -1,52 +1,91 @@
 <div class="container app-body">
     <div class="one__student">
-        <!-- <div *ngIf="classDetail; else noRecord"> -->
         <div class="one__student__left">
             <img [src]="generator.generateRandomAvatar()" alt="Avatar" />
-            <!-- <h1>{{ classDetail.className.toUpperCase() }}</h1> -->
             <div class="detail">
-                <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta perferendis tempore nisi reiciendis
-                    ullam
-                    consequuntur corporis iusto velit iure accusamus dignissimos rerum, cum, harum quasi architecto,
-                    odit corrupti. Est,
-                    voluptate.</h1>
-
+                <h1>{{ classDetail?.className?.toUpperCase() }}</h1>
             </div>
         </div>
         <div class="one__student__right">
-            <div class="info">
-                <ul>
-                    <li><span>Name</span>: {{ classDetail.className.toUpperCase() }}</li>
-                    <li>
-                        <span>Number of Students</span>:
-                        <ng-container *ngIf="numOfStudents.length > 0; else noStudents">
-                            {{ numOfStudents.length }}
-                        </ng-container>
-                        <ng-template #noStudents>
-                            <span class="no-students-msg">No student attached to this class</span>
-                        </ng-template>
-                    </li>
-                    <li>
-                        <span>Participating Students</span>:
-                        <ol class="participating-students-list">
-                            <li *ngFor="let student of numOfStudents">
-                                <span class="participating-student-name">{{ student.studentName.toUpperCase() }}</span>
-                            </li>
-                        </ol>
-                    </li>
-                </ul>
-            </div>
+            <ul>
+                <li><span>Name</span>: {{ classDetail?.className?.toUpperCase() }}</li>
+                <li>
+                    <span>Number of Courses</span>:
+                    {{ classCourses.length > 0 ? classCourses.length : 'No courses attached to this class' }}
+                </li>
+                <li>
+                    <span>Participating Courses</span>:
+                    <ol style="margin-top: 14px">
+                        <li *ngFor="let course of classCourses">{{ course.courseName }}</li>
+                    </ol>
+                </li>
+            </ul>
+
             <div class="one__actions">
-                <a [routerLink]="'/class/update/' + classDetail.id">Update student records</a>
-                <button class="del-btn" (click)="onDelete(classDetail.id)">Delete Class</button>
+                <a [routerLink]="'/class/update/' + classDetail?.id">Update student records</a>
+                <button class="del-btn" (click)="onDelete(classDetail?.id)">Delete Class</button>
             </div>
         </div>
     </div>
-    <!-- <ng-template #noRecord>
+</div>
+
+
+
+
+
+<!--
+<div class="container app-body">
+    <div class="one__student">
+        <div *ngIf="classDetail; else noRecord">
+            <div class="one__student__left">
+                <img [src]="generator.generateRandomAvatar()" alt="Avatar" />
+                <h1>{{ classDetail.className.toUpperCase() }}</h1> 
+                <div class="detail">
+                    <h1>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta perferendis tempore nisi
+                        reiciendis
+                        ullam
+                        consequuntur corporis iusto velit iure accusamus dignissimos rerum, cum, harum quasi architecto,
+                        odit corrupti. Est,
+                        voluptate.</h1>
+
+                </div>
+            </div>
+            <div class="one__student__right">
+                <div class="info">
+                    <ul>
+                        <li><span>Name</span>: {{ classDetail.className.toUpperCase() }}</li>
+                        <li>
+                            <span>Number of Students</span>:
+                            <ng-container *ngIf="numOfStudents.length > 0; else noStudents">
+                                {{ numOfStudents.length }}
+                            </ng-container>
+                            <ng-template #noStudents>
+                                <span class="no-students-msg">No student attached to this class</span>
+                            </ng-template>
+                        </li>
+                        <li>
+                            <span>Participating Students</span>:
+                            <ol class="participating-students-list">
+                                <li *ngFor="let student of numOfStudents">
+                                    <span class="participating-student-name">{{ student.studentName.toUpperCase()
+                                        }}</span>
+                                </li>
+                            </ol>
+                        </li>
+                    </ul>
+                </div>
+                <div class="one__actions">
+                    <a [routerLink]="'/class/update/' + classDetail.id">Update student records</a>
+                    <button class="del-btn" (click)="onDelete(classDetail.id)">Delete Class</button>
+                </div>
+            </div>
+        </div>
+        <ng-template #noRecord>
             <h3>Record Unavailable for Student</h3>
         </ng-template>
-    </div> -->
+    </div>
 </div>
+-->
 <!--
 <div
     style="width: 100%; height: 100%; padding-top: 32px; padding-bottom: 64px; padding-left: 36px; padding-right: 63px; background: white; justify-content: flex-start; align-items: center; display: inline-flex">
