@@ -1,0 +1,49 @@
+<div class="container">
+    <div class="class__wrapper">
+        <div class="class__wrapper__left">
+            <img [src]="generator.generateRandomAvatar()" alt="Avatar" />
+
+            <ul>
+                <li> Create a student</li>
+                <li>Add Student Name</li>
+                <li> Add Student to Class</li>
+                <li>Add Student Age</li>
+                <li>Add Studen Courses</li>
+            </ul>
+        </div>
+        <div class="class__wrapper__right">
+            <form [formGroup]="studentForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="studentName">Student Name</label>
+                    <input type="text" id="studentName" formControlName="studentName" placeholder="Student Name"
+                        class="mb-3" />
+
+                    <label for="studentAge">Student Age</label>
+                    <input type="number" id="studentAge" formControlName="studentAge" placeholder="Student Age" />
+
+                    <label for="studentCourse">Assign Course to this Student</label>
+                    <select id="studentCourse" formControlName="studentCourse">
+                        <option value="" disabled>Select a course</option>
+                        <option *ngFor="let course of courseOptions" [value]="course">{{ course }}</option>
+                    </select>
+
+                    <div class="student__wrapper">
+                        <label for="studentClass">Select Class of Student</label>
+                        <br />
+                        <select id="studentClass" formControlName="studentClass">
+                            <option value="" disabled>Select class</option>
+                            <option *ngFor="let classOption of classOptions" [value]="classOption">{{ classOption }}
+                            </option>
+                        </select>
+                    </div>
+
+                    <div *ngIf="error" class="err-msgs" style="color: red; margin-top: 10px;">
+                        {{ error }}
+                    </div>
+
+                    <button type="submit" class="btn btn-dark" style="margin-top: 1rem;">Add Student</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

@@ -29,6 +29,7 @@ import { ViewCourseComponent } from './components/courses/view-course/view-cours
 import { CreateCourseComponent } from './components/courses/create-course/create-course.component';
 import { CreateClassComponent } from './components/classes/create-class/create-class.component';
 import { AllocateStudentsComponent } from './components/students/allocate-students/allocate-students.component';
+import { CreateStudentComponent } from './components/students/create-student/create-student.component';
 
 @NgModule({
   declarations: [
@@ -55,7 +56,8 @@ import { AllocateStudentsComponent } from './components/students/allocate-studen
     ViewCourseComponent,
     CreateCourseComponent,
     CreateClassComponent,
-    AllocateStudentsComponent
+    AllocateStudentsComponent,
+    CreateStudentComponent
   ],
   imports: [
     BrowserModule,
