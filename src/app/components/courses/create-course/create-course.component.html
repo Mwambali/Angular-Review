@@ -1,1 +1,52 @@
-<p>create-course works!</p>
+<div class="container">
+    <div class="class__wrapper">
+        <div class="class__wrapper__left">
+            <img [src]="generator.generateRandomAvatar()" alt="Avatar" />
+
+            <h1>Course Creation</h1>
+            <ul>
+                <li>Create A Course(eg: English)</li>
+                <li>Add students to course</li>
+            </ul>
+        </div>
+        <div class="class__wrapper__right">
+            <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="coursename">Course Name</label>
+                    <input type="text" name="coursename" id="coursename" placeholder="Course Name" class="mb-3"
+                        formControlName="courseName" />
+                </div>
+
+                <div class="form-group">
+                    <label for="credits">Credits</label>
+                    <input type="number" name="credits" id="credits" placeholder="Number of Credits" class="mb-3"
+                        formControlName="courseCredits" />
+                </div>
+
+                <div class="form-group">
+                    <label for="students">Students</label>
+                    <ng-select [items]="options" [closeOnSelect]="false" bindLabel="label" [multiple]="true"
+                        formControlName="selectedStudents">
+                    </ng-select>
+                    <div class="selected-students">
+                        <div *ngFor="let student of selectedStudents" class="selected-student">
+                            {{ student.studentName }}
+                            <button class="remove-student" (click)="handleRemoveStudent(student)">
+                                x
+                            </button>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div *ngIf="error" class="err-msgs" style="color: red; margin-top: 10px;">
+                    {{ error }}
+                </div>
+
+                <button type="submit" color="dark" style="margin-top: 1rem;">
+                    Create Course
+                </button>
+            </form>
+        </div>
+    </div>
+</div>

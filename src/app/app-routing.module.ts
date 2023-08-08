@@ -33,7 +33,7 @@ const routes: Routes = [
       { path: 'view-course/:id', component: ViewCourseComponent },
       { path: 'view-student/:id', component: ViewStudentComponent },
       { path: 'create-student', component: CreateStudentComponent },
-
+      { path: 'create-course', component: CreateStudentComponent },
 
 
       { path: 'about', component: AboutUsComponent },

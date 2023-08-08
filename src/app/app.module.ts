@@ -30,6 +30,7 @@ import { CreateCourseComponent } from './components/courses/create-course/create
 import { CreateClassComponent } from './components/classes/create-class/create-class.component';
 import { AllocateStudentsComponent } from './components/students/allocate-students/allocate-students.component';
 import { CreateStudentComponent } from './components/students/create-student/create-student.component';
+import { NgSelectModule } from '@ng-select/ng-select';
 
 @NgModule({
   declarations: [
@@ -64,6 +65,7 @@ import { CreateStudentComponent } from './components/students/create-student/cre
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
+    NgSelectModule,
     HttpClientModule
   ],
   providers: [
