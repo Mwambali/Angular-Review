@@ -21,11 +21,14 @@
                     <label for="studentAge">Student Age</label>
                     <input type="number" id="studentAge" formControlName="studentAge" placeholder="Student Age" />
 
-                    <label for="studentCourse">Assign Course to this Student</label>
-                    <select id="studentCourse" formControlName="studentCourse">
-                        <option value="" disabled>Select a course</option>
+                    <label for="studentCourse">Assign Course(s) to this Student</label>
+                    <select id="studentCourse" formControlName="studentCourse" multiple
+                        (change)="onCourseChange($event)">
+                        <option value="" disabled>Select course(s)</option>
                         <option *ngFor="let course of courseOptions" [value]="course">{{ course }}</option>
                     </select>
+
+
 
                     <div class="student__wrapper">
                         <label for="studentClass">Select Class of Student</label>

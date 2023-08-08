@@ -18,6 +18,8 @@ export class CreateStudentComponent implements OnInit {
   courseOptions: string[] = []; // Populate this with your course options
   classOptions: string[] = []; // Populate this with your class options
   error: string = '';
+  selectedCourses: string[] = []; // Initialize an empty array to store selected courses
+
 
   constructor(
     private fb: FormBuilder,
@@ -28,7 +30,7 @@ export class CreateStudentComponent implements OnInit {
       studentName: ['', Validators.required],
       studentAge: [0, Validators.required],
       studentClass: ['', Validators.required],
-      studentCourse: ['', Validators.required],
+      studentCourse: [[]], // Initialize as an empty array to store selected courses
     });
   }
 
@@ -38,17 +40,26 @@ export class CreateStudentComponent implements OnInit {
     this.courseOptions = ['Course 1', 'Course 2', 'Course 3']; // Example
   }
 
+  onCourseChange(event: any) {
+    // Get the selected options from the event
+    const selectedOptions = event.target.selectedOptions;
+    // Map the selected options to an array of strings
+    this.selectedCourses = Array.from(selectedOptions, (option: HTMLOptionElement) => option.value);
+  }
+
   onSubmit(): void {
     if (this.studentForm.valid) {
       const newStudent: Student = this.studentForm.value;
-      this.studentService.createStudent(newStudent).subscribe(
-        () => {
-          this.router.navigate(['/students']);
+      // Assign the selected courses array to the studentCourse property
+      newStudent.studentCourse = this.selectedCourses;
+      this.studentService.createStudent(newStudent).subscribe({
+        next: () => {
+          this.router.navigate(['/']);
         },
-        (error) => {
+        error: (error) => {
           this.error = error.message;
-        }
-      );
+        },
+      });
     }
   }
 }
