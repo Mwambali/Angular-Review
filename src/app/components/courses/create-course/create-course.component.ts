@@ -40,26 +40,35 @@ export class CreateCourseComponent implements OnInit {
     this.fetchStudents();
   }
 
+
   fetchStudents(): void {
-    this.studentService.getStudents().subscribe(
-      (students: Student[]) => {
+    this.studentService.getStudents().subscribe({
+      next: (students: Student[]) => {
         this.options = students.map((student) => ({
           value: student.id,
-          label: student.studentName
+          label: student.studentName,
         }));
       },
-      (error) => {
+      error: (error) => {
         this.error = error.message;
-      }
-    );
+      },
+    });
   }
+
 
   onSubmit(): void {
     if (this.courseForm.valid) {
-      const newCourse: Course = this.courseForm.value;
+      const newCourse: Course = {
+        courseName: this.courseForm.value.courseName,
+        credits: this.courseForm.value.courseCredits,
+        students: []
+        // students: this.selectedStudents.filter(student => student.id !== undefined)
+        //   .map(student => student.id)
+      };
+
       this.courseService.createCourse(newCourse).subscribe({
         next: () => {
-          this.router.navigate(['/courses']);
+          this.router.navigate(['/']);
         },
         error: (error) => {
           this.error = error.message;
@@ -67,6 +76,8 @@ export class CreateCourseComponent implements OnInit {
       });
     }
   }
+
+
 
   handleSelectStudent(selectedOption: any): void {
     this.selectedStudents = [

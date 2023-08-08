@@ -1,0 +1,126 @@
+@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
+
+* {
+    box-sizing: border-box;
+    font-family: 'Mukta', sans-serif;
+}
+
+body {
+    background: #f0f6fa;
+    /* Light blue */
+}
+
+.container {
+    width: 65%;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.class__wrapper {
+    margin: 20px auto;
+    background-color: #fff;
+    padding: 20px;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.class__wrapper img {
+    width: 100px;
+}
+
+.class__wrapper .class__wrapper__left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.class__wrapper form {
+    margin-top: 20px;
+}
+
+.class__wrapper form .form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.class__wrapper form input {
+    padding: 10px 15px;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+.class__wrapper button {
+    padding: 10px 15px;
+    cursor: pointer;
+    background-color: #000;
+    border: unset;
+    color: #fff;
+    border-radius: 3px;
+}
+
+/* Hover effect */
+.class__wrapper button:hover {
+    background-color: #444;
+}
+
+.selected-students {
+    margin-top: 10px;
+}
+
+.selected-student {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d8e5eb;
+    /* Light blue - lighter shade */
+    padding: 5px 10px;
+    margin-bottom: 5px;
+    border-radius: 3px;
+}
+
+.remove-student {
+    background-color: #ff6767;
+    /* Light red */
+    border: none;
+    color: #fff;
+    cursor: pointer;
+    padding: 3px 8px;
+    border-radius: 50%;
+    transition: background-color 0.3s;
+}
+
+.remove-student:hover {
+    background-color: #d84646;
+}
+
+.err-msgs {
+    color: red;
+    margin-top: 10px;
+}
+
+.form-group label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.ng-select {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 10px 15px;
+    width: 100%;
+}
+
+/* Responsive design */
+@media only screen and (max-width: 768px) {
+    .container {
+        width: 90%;
+    }
+
+    .class__wrapper {
+        grid-template-columns: 100%;
+    }
+}
