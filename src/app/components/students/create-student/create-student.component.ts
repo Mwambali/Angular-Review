@@ -54,7 +54,7 @@ export class CreateStudentComponent implements OnInit {
       newStudent.studentCourse = this.selectedCourses;
       this.studentService.createStudent(newStudent).subscribe({
         next: () => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/students']);
         },
         error: (error) => {
           this.error = error.message;

@@ -68,7 +68,7 @@ export class CreateCourseComponent implements OnInit {
 
       this.courseService.createCourse(newCourse).subscribe({
         next: () => {
-          this.router.navigate(['/']);
+          this.router.navigate(['/courses']);
         },
         error: (error) => {
           this.error = error.message;
