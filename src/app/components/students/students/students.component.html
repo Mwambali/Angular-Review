@@ -1,0 +1,48 @@
+<div class="container">
+    <div class="student__wrapper students__cover">
+        <ng-container *ngIf="students.length > 0; else noStudents">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Age</th>
+                        <th>Class</th>
+                        <th>Courses</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let student of students; let i = index">
+                        <td><a [routerLink]="['/view-student', student.id]">{{ student.studentName }}</a></td>
+                        <td>{{ student.studentAge }}</td>
+                        <td>{{ student.studentClass }}</td>
+                        <td>{{ student.studentCourse.join(', ') }}</td>
+                        <!-- <td>
+                            <select>
+                                <option disabled value="">Courses</option>
+                                <option *ngFor="let course of student.studentCourse; let j = index" [ngValue]="course">
+                                    {{ course }}
+                                </option>
+                            </select>
+                        </td> -->
+                    </tr>
+                </tbody>
+            </table>
+        </ng-container>
+        <ng-template #noStudents>
+            <div style="padding-left: 10px;">
+                <h4>Please complete the following to manage students</h4>
+                <ul>
+                    <li>
+                        <a routerLink="/create-course">Create a course</a>
+                    </li>
+                    <li>
+                        <a routerLink="/create-class">Create a Class</a>
+                    </li>
+                    <li>
+                        <a routerLink="/create-student">Add a Student</a>
+                    </li>
+                </ul>
+            </div>
+        </ng-template>
+    </div>
+</div>

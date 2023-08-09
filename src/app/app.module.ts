@@ -31,6 +31,8 @@ import { CreateClassComponent } from './components/classes/create-class/create-c
 import { AllocateStudentsComponent } from './components/students/allocate-students/allocate-students.component';
 import { CreateStudentComponent } from './components/students/create-student/create-student.component';
 import { NgSelectModule } from '@ng-select/ng-select';
+import { CoursesComponent } from './components/courses/courses/courses.component';
+import { StudentsComponent } from './components/students/students/students.component';
 
 @NgModule({
   declarations: [
@@ -58,7 +60,9 @@ import { NgSelectModule } from '@ng-select/ng-select';
     CreateCourseComponent,
     CreateClassComponent,
     AllocateStudentsComponent,
-    CreateStudentComponent
+    CreateStudentComponent,
+    CoursesComponent,
+    StudentsComponent
   ],
   imports: [
     BrowserModule,

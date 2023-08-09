@@ -1,0 +1,20 @@
+<div class="container">
+    <div class="student__wrapper">
+        <div class="classes__wrapper">
+            <ng-container *ngIf="courses.length > 0; else noCourses">
+                <ul class="allClasses">
+                    <li *ngFor="let course of courses; let i = index">
+                        <a [routerLink]="['/view-course', course.id]">{{ course.courseName }}</a>
+                    </li>
+                </ul>
+            </ng-container>
+            <ng-template #noCourses>
+                <div>
+                    <h3>No Course Available</h3>
+                    <br />
+                    <a routerLink="/create-course">Create a course</a>
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

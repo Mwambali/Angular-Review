@@ -31,7 +31,7 @@
                     <div class="selected-students">
                         <div *ngFor="let student of selectedStudents" class="selected-student">
                             {{ student.studentName }}
-                            <button class="remove-student" (click)="handleRemoveStudent(student)">
+                            <button class="btn remove-student" (click)="handleRemoveStudent(student)">
                                 x
                             </button>
                         </div>

@@ -16,6 +16,8 @@ import { ViewCourseComponent } from './components/courses/view-course/view-cours
 import { ViewStudentComponent } from './components/students/view-student/view-student.component';
 import { CreateStudentComponent } from './components/students/create-student/create-student.component';
 import { CreateCourseComponent } from './components/courses/create-course/create-course.component';
+import { CoursesComponent } from './components/courses/courses/courses.component';
+import { StudentsComponent } from './components/students/students/students.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -30,6 +32,9 @@ const routes: Routes = [
       { path: 'landing', component: LandingComponent },
       { path: 'category', component: SingleCategoryComponent },
       { path: 'post', component: SinglePostComponent },
+      { path: 'courses', component: CoursesComponent },
+      { path: 'students', component: StudentsComponent },
+
       { path: 'view-class/:id', component: ViewClassComponent },
       { path: 'view-course/:id', component: ViewCourseComponent },
       { path: 'view-student/:id', component: ViewStudentComponent },
