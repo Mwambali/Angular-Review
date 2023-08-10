@@ -4,16 +4,17 @@
             <h3 class="text-center text-theme-primary"> Create New Class</h3>
             <p class="text-center mb-5">You can add new a new class from Here ..!</p>
 
-            <form class="row text-center" #categoryForm='ngForm' (ngSubmit)="onSubmit(categoryForm)">
+            <form [formGroup]="classForm" class="row text-center" (ngSubmit)="onSubmit()">
                 <div class="form-group col-md-10">
-                    <input name="category" type="text" class="form-control shadow-effect" placeholder="Add New Class"
-                        ngModel>
+                    <input formControlName="className" type="text" class="form-control shadow-effect"
+                        placeholder="Add New Class" />
                 </div>
 
                 <div class="col-md-2">
-                    <button class="btn btn-block btn-info mb-2 btn-theme">Add Class</button>
+                    <button type="submit" class="btn btn-block btn-info mb-2 btn-theme">Add Class</button>
                 </div>
             </form>
+
 
         </div>
     </div>
@@ -31,8 +32,16 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-
+                            <tr *ngFor="let classInfo of createdClasses; let i = index">
+                                <td>{{ i + 1 }}</td>
+                                <td>
+                                    <a [routerLink]="['/view-class', classInfo.id]">{{ classInfo.className }}</a>
+                                </td>
+                                <td>
+                                    <button class="btn btn-primary btn-sm" (click)="editClass(classInfo)">Edit</button>
+                                    <button class="btn btn-danger btn-sm"
+                                        (click)="deleteClass(classInfo.id)">Delete</button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>

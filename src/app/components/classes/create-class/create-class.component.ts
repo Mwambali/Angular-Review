@@ -1,33 +1,64 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms'; // Import NgForm type
-// import { AngularFirestore } from '@angular/fire/compat/firestore';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { ClassService } from '../class.service';
+import { Class } from '../models/class.model';
+
 @Component({
   selector: 'app-create-class',
   templateUrl: './create-class.component.html',
   styleUrls: ['./create-class.component.css']
 })
 export class CreateClassComponent implements OnInit {
-  // formData: any;
-  // categoryArray: Array<object>
+  classForm: FormGroup;
+  createdClasses: Class[] = [];
 
-  // constructor(private afs: AngularFirestore) { }
+  constructor(
+    private fb: FormBuilder,
+    private classService: ClassService,
+    private router: Router
+  ) {
+    this.classForm = this.fb.group({
+      className: ['', Validators.required]
+    });
+  }
 
   ngOnInit(): void {
-    // this.categoryService.loadData().subscribe(val => {
-    //   console.log(val);
-    //   this.categoryArray = val;
-
-    // })
+    this.fetchCreatedClasses();
   }
 
-  onSubmit(formData: NgForm) { // Explicitly specify the type as NgForm
-    // let categoryData = {
-    //   category: formData.value.category
-    // }
-    // this.afs.collection('categories').add(categoryData).then(docRef => {
-    //   console.log(docRef);
-    // })
-    //   .catch(err => console.log(err))
+  onSubmit(): void {
+    if (this.classForm.valid) {
+      const className = this.classForm.value.className;
+      this.classService.createClass(className).subscribe({
+        next: () => {
+          this.classForm.reset();
+          this.fetchCreatedClasses();
+        },
+        // Handle error if needed
+      });
+    }
   }
 
+  fetchCreatedClasses(): void {
+    this.classService.getClasses().subscribe({
+      next: (classes) => {
+        this.createdClasses = classes
+      },
+      // Handle error if needed
+    });
+  }
+
+  editClass(classInfo: Class): void {
+    this.router.navigate(['/view-class/', classInfo.id]);
+  }
+
+  deleteClass(classId: string): void {
+    this.classService.deleteClass(classId).subscribe({
+      next: () => {
+        this.fetchCreatedClasses();
+      },
+      // Handle error if needed
+    });
+  }
 }
