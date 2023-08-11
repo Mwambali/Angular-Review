@@ -12,6 +12,10 @@ import { Class } from '../models/class.model';
 export class CreateClassComponent implements OnInit {
   classForm: FormGroup;
   createdClasses: Class[] = [];
+  selectedClass: Class | null = null;
+  error: string = '';
+
+
 
   constructor(
     private fb: FormBuilder,
@@ -30,35 +34,71 @@ export class CreateClassComponent implements OnInit {
   onSubmit(): void {
     if (this.classForm.valid) {
       const className = this.classForm.value.className;
-      this.classService.createClass(className).subscribe({
-        next: () => {
-          this.classForm.reset();
-          this.fetchCreatedClasses();
-        },
-        // Handle error if needed
-      });
+
+      if (this.selectedClass) {
+        this.classService.updateClass(this.selectedClass.id, className).subscribe({
+          next: () => {
+            this.selectedClass = null;
+            this.classForm.reset();
+            this.fetchCreatedClasses();
+          },
+          error: (error) => {
+            this.error = error.message;
+          },
+        });
+      } else {
+        this.classService.createClass(className).subscribe({
+          next: () => {
+            this.classForm.reset();
+            this.fetchCreatedClasses();
+          },
+          error: (error) => {
+            this.error = error.message;
+          },
+        });
+      }
     }
   }
+
 
   fetchCreatedClasses(): void {
     this.classService.getClasses().subscribe({
       next: (classes) => {
         this.createdClasses = classes
       },
-      // Handle error if needed
+      error: (error) => {
+        this.error = error.message;
+      },
     });
   }
 
   editClass(classInfo: Class): void {
-    this.router.navigate(['/view-class/', classInfo.id]);
+    this.selectedClass = classInfo;
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+
   }
+
+  // updateClass(): void {
+  //   if (this.selectedClass) {
+  //     const newClassName = this.selectedClass.className;
+  //     this.classService.updateClass(this.selectedClass.id, newClassName).subscribe({
+  //       next: () => {
+  //         this.selectedClass = null;
+  //         this.fetchCreatedClasses();
+  //       },
+  //       // Handle error if needed
+  //     });
+  //   }
+  // }
 
   deleteClass(classId: string): void {
     this.classService.deleteClass(classId).subscribe({
       next: () => {
         this.fetchCreatedClasses();
       },
-      // Handle error if needed
+      error: (error) => {
+        this.error = error.message;
+      },
     });
   }
 }

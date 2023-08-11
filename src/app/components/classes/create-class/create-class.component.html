@@ -1,18 +1,22 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12 bg-seconday-theme p-5 shadow-effect">
-            <h3 class="text-center text-theme-primary"> Create New Class</h3>
-            <p class="text-center mb-5">You can add new a new class from Here ..!</p>
+            <h3 class="text-center text-theme-primary">{{ selectedClass ? 'EDIT CLASS NAME' : 'CREATE NEW CLASSES' }}
+            </h3>
+            <p class="text-center mb-5">You can add and manage new classes from Here</p>
 
             <form [formGroup]="classForm" class="row text-center" (ngSubmit)="onSubmit()">
                 <div class="form-group col-md-10">
                     <input formControlName="className" type="text" class="form-control shadow-effect"
-                        placeholder="Add New Class" />
+                        placeholder="Add New Class" [value]="selectedClass ? selectedClass.className : ''" />
                 </div>
 
                 <div class="col-md-2">
-                    <button type="submit" class="btn btn-block btn-info mb-2 btn-theme">Add Class</button>
+                    <button type="submit" class="btn btn-block btn-info mb-2 btn-theme">
+                        {{ selectedClass ? 'Update Class' : 'Add Class' }}
+                    </button>
                 </div>
+
             </form>
 
 
@@ -38,8 +42,8 @@
                                     <a [routerLink]="['/view-class', classInfo.id]">{{ classInfo.className }}</a>
                                 </td>
                                 <td>
-                                    <button class="btn btn-primary btn-sm" (click)="editClass(classInfo)">Edit</button>
-                                    <button class="btn btn-danger btn-sm"
+                                    <button class="btn btn-warning btn-sm" (click)="editClass(classInfo)">Edit</button>
+                                    <button class="btn btn-danger btn-sm ms-2"
                                         (click)="deleteClass(classInfo.id)">Delete</button>
                                 </td>
                             </tr>
