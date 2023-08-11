@@ -1,1 +1,37 @@
-<p>update-course works!</p>
+<div class="container">
+    <div class="class__wrapper" *ngIf="courseDetail">
+        <div class="class__wrapper__left">
+            <img [src]="generator.generateRandomAvatar()" alt="Avatar" />
+            <ul>
+                <li> Update a course</li>
+                <li>Update Course name</li>
+                <li> Add Student to course</li>
+            </ul>
+        </div>
+        <div class="class__wrapper__right">
+            <form [formGroup]="courseForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="coursename">Course Name</label>
+                    <input type="text" formControlName="courseName" id="coursename" placeholder="Course Name"
+                        class="mb-3" />
+
+                    <label for="credits">Credits</label>
+                    <input type="number" formControlName="credits" id="credits" placeholder="Credits" class="mb-3" />
+
+                    <label for="assigncourses">Assign Students to this course</label>
+                    <input #tagsInput type="text" formControlName="students" id="assigncourses"
+                        placeholder="Assign Courses" class="mb-3" />
+
+                    <div class="err-msgs" *ngIf="error?.id === 'UPDATE_COURSE_ERROR'"
+                        style="color: red; margin-top: 10px;">
+                        {{ error?.msg }}
+                    </div>
+
+                    <button type="submit" color="dark" style="margin-top: 1rem;">
+                        Update Course Records
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

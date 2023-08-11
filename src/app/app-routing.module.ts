@@ -20,6 +20,7 @@ import { CoursesComponent } from './components/courses/courses/courses.component
 import { StudentsComponent } from './components/students/students/students.component';
 import { CreateClassComponent } from './components/classes/create-class/create-class.component';
 import { UpdateStudentComponent } from './components/students/update-student/update-student.component';
+import { UpdateCourseComponent } from './components/courses/update-course/update-course.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -41,6 +42,7 @@ const routes: Routes = [
       { path: 'view-course/:id', component: ViewCourseComponent },
       { path: 'view-student/:id', component: ViewStudentComponent },
       { path: 'update-student/:id', component: UpdateStudentComponent },
+      { path: 'update-course/:id', component: UpdateCourseComponent },
 
       { path: 'create-student', component: CreateStudentComponent },
       { path: 'create-course', component: CreateCourseComponent },
