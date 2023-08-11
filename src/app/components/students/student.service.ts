@@ -25,7 +25,7 @@ export class StudentService {
   }
 
   updateStudent(id: string, student: Student): Observable<void> {
-    return this.http.put<void>(`${this.baseUrl}/update/${id}`, student);
+    return this.http.patch<void>(`${this.baseUrl}/update/${id}`, student);
   }
 
   deleteStudent(id: string): Observable<void> {
