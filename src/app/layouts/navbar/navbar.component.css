@@ -1,9 +1,77 @@
-nav {
-    margin-top: 100px;
-    height: 50px;
-    background-color: var(--navbar-footer-color);
+.mat-toolbar {
+    color: var(--primary-color);
 }
 
-.nav-link {
-    text-transform: uppercase;
+/* Style the container */
+.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
 }
+
+/* Style the links */
+.links {
+    display: flex;
+    align-items: center;
+}
+
+.links button[mat-icon-button] {
+    margin-right: 10px;
+    border: none;
+    background: none;
+}
+
+a.nav-link {
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+a.nav-link:hover {
+    text-decoration: underline;
+}
+
+/* Style the user */
+.user {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+/* Style the user dropdown button */
+.user button[mat-icon-button] {
+    display: flex;
+    align-items: center;
+    border: none;
+    background: none;
+    padding: 0;
+    margin-left: 10px;
+}
+
+/* Style the menu items */
+.mat-menu-item {
+    color: #333;
+}
+
+.mat-menu-item:hover {
+    background-color: #f0f0f0;
+}
+
+/* Style the dropdown content */
+.mat-menu-content {
+    background-color: #fff;
+    border: 1px solid #ccc;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.mat-menu-item {
+    padding: 10px 20px;
+    font-size: 14px;
+}
+
+.mat-menu-item:last-child {
+    border-top: 1px solid #ccc;
+}
+
+/* Rest of your existing styles ... */

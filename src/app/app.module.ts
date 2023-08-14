@@ -1,6 +1,10 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from '@angular/material/toolbar';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -35,6 +39,9 @@ import { CoursesComponent } from './components/courses/courses/courses.component
 import { StudentsComponent } from './components/students/students/students.component';
 import { UpdateStudentComponent } from './components/students/update-student/update-student.component';
 import { UpdateCourseComponent } from './components/courses/update-course/update-course.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { UserDropdownComponent } from './layouts/user-dropdown/user-dropdown.component';
+import { JwtModule } from '@auth0/angular-jwt';
 
 @NgModule({
   declarations: [
@@ -66,7 +73,8 @@ import { UpdateCourseComponent } from './components/courses/update-course/update
     CoursesComponent,
     StudentsComponent,
     UpdateStudentComponent,
-    UpdateCourseComponent
+    UpdateCourseComponent,
+    UserDropdownComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +82,18 @@ import { UpdateCourseComponent } from './components/courses/update-course/update
     FormsModule,
     ReactiveFormsModule,
     NgSelectModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule,
+    MatMenuModule,
+    MatToolbarModule,
+    MatIconModule,
+    JwtModule.forRoot({
+      config: {
+        tokenGetter: () => {
+          return localStorage.getItem('auth_token');
+        }
+      }
+    })
   ],
   providers: [
     {

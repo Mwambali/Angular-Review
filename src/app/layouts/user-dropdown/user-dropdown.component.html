@@ -1,0 +1,11 @@
+<div mat-icon-button [matMenuTriggerFor]="userMenu">
+    <mat-icon class="icon">account_circle</mat-icon>
+</div>
+<mat-menu #userMenu="matMenu" class="user-menu">
+    <div class="user-info">
+        <h4>{{ userNameFromPayload }}</h4>
+    </div>
+    <button mat-menu-item class="user-menu-item">Profile</button>
+    <button mat-menu-item class="user-menu-item">Settings</button>
+    <button mat-menu-item class="user-menu-item" (click)="logout()">Logout</button>
+</mat-menu>

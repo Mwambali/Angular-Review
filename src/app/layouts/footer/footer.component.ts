@@ -20,12 +20,12 @@ export class FooterComponent implements OnInit {
   logout(): void {
     try {
       if (this.authService.logout()) {
-        this.router.navigate(['/login']); // Navigate to '/login' after successful logout
+        this.router.navigate(['/login']);
       } else {
-        throw new Error('Logout failed'); // Throw an error if logout is not successful
+        throw new Error('Logout failed');
       }
     } catch (error) {
-      console.error(error); // Handle the error as per your requirements
+      console.error(error);
     }
   }
 

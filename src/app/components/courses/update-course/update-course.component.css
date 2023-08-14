@@ -61,6 +61,20 @@ body {
     transition: background-color 0.3s;
 }
 
+.classes__wrapper {
+    background: #fff;
+    padding: 10px;
+}
+
+.classes__wrapper li {
+    margin-bottom: 12px;
+}
+
+.classes__wrapper a {
+    color: #000;
+    text-decoration: none;
+}
+
 /* Hover effect */
 .class__wrapper button:hover {
     background-color: #444;

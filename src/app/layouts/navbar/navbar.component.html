@@ -1,4 +1,41 @@
-<nav class=" navbar navbar-expand-lg fixed-top ">
+<mat-toolbar>
+    <div class="container">
+        <div>
+            <a href="#" class="site-logo"> e-GA </a>
+        </div>
+
+        <div class="links">
+            <!-- Manage dropdown -->
+            <button mat-icon-button [matMenuTriggerFor]="manageMenu">
+                Manage
+            </button>
+            <mat-menu #manageMenu="matMenu">
+                <button mat-menu-item routerLink="/students">Students</button>
+                <button mat-menu-item routerLink="/courses">Courses</button>
+                <button mat-menu-item routerLink="/classes">Classes</button>
+            </mat-menu>
+
+            <!-- Create dropdown -->
+            <button mat-icon-button [matMenuTriggerFor]="createMenu">
+                Create
+            </button>
+            <mat-menu #createMenu="matMenu">
+                <button mat-menu-item>Create Student</button>
+                <button mat-menu-item>Create Course</button>
+                <button mat-menu-item>Create Class</button>
+            </mat-menu>
+
+        </div>
+        <div class="user">
+            <app-user-dropdown></app-user-dropdown>
+        </div>
+    </div>
+</mat-toolbar>
+
+
+
+
+<!-- <nav class=" navbar navbar-expand-lg fixed-top ">
 
     <div class="container">
         <div class=" collapse navbar-collapse justify-content-center">
@@ -12,4 +49,4 @@
         </div>
     </div>
 
-</nav>
+</nav> -->
