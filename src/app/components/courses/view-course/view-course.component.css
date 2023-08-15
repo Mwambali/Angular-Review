@@ -1,25 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
-
-* {
-    box-sizing: border-box;
-    font-family: 'Mukta', sans-serif;
-}
-
-body {
-    background: #f0f6fa;
-    /* Light blue */
-}
+@import '../../../shared-styles.css';
 
 .app-body {
     margin-top: 150px;
     min-height: 35vh;
     /* 35vh */
-}
-
-.container {
-    width: 65%;
-    margin-right: auto;
-    margin-left: auto;
 }
 
 .one__student {

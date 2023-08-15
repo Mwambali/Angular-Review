@@ -1,21 +1,4 @@
-/* update-student.component.css */
-@import url("https://fonts.googleapis.com/css2?family=Mukta:wght@200;300;400;500;600;700;800&display=swap");
-
-* {
-    box-sizing: border-box;
-    font-family: 'Mukta', sans-serif;
-}
-
-body {
-    background: #f0f6fa;
-    /* Light blue */
-}
-
-.container {
-    width: 65%;
-    margin-right: auto;
-    margin-left: auto;
-}
+@import '../../../shared-styles.css';
 
 .class__wrapper {
     margin: 20px auto;
