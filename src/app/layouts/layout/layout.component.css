@@ -1,0 +1,12 @@
+/* Set the layout container to use flexbox with vertical direction */
+.app-layout {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* Minimum 100% viewport height */
+}
+
+/* Make sure the body of the layout expands to fill remaining space */
+.app-layout .app-body {
+    flex-grow: 1;
+}

@@ -1,9 +1,9 @@
 @import '../../../shared-styles.css';
 
 .app-body {
-    margin-top: 150px;
+    margin-top: 50px;
     min-height: 35vh;
-    /* 35vh */
+
 }
 
 .one__student {

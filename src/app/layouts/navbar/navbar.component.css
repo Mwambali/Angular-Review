@@ -2,7 +2,7 @@
     color: var(--primary-color);
 }
 
-/* Style the container */
+/*container */
 .container {
     display: flex;
     flex-direction: row;
@@ -11,7 +11,7 @@
     padding: 0 8px;
 }
 
-/* Style the links */
+/* links */
 .links {
     display: flex;
     align-items: center;
@@ -32,14 +32,14 @@ a.nav-link:hover {
     text-decoration: underline;
 }
 
-/* Style the user */
+/*user */
 .user {
     display: flex;
     align-items: center;
     cursor: pointer;
 }
 
-/* Style the user dropdown button */
+/*user dropdown button */
 .user button[mat-icon-button] {
     display: flex;
     align-items: center;
@@ -73,5 +73,3 @@ a.nav-link:hover {
 .mat-menu-item:last-child {
     border-top: 1px solid #ccc;
 }
-
-/* Rest of your existing styles ... */

@@ -3,16 +3,15 @@
         <div class="home__left">
             <img [src]="avatar" alt="Avatar" />
 
-            <h1>App Actions</h1>
-            <ul>
-                <li>Create & Manage Courses</li>
-                <li>Create & Manage Classes</li>
-                <li>Create & Manage Students</li>
-            </ul>
+            <h1>WHAT YOU CAN DO WITH THIS APP</h1>
+            <p>
+                You can Manage your classes, Courses, Students and Generate Report createdClasses
+                <br>
+                It's all in one - Follow the steps below
+            </p>
         </div>
 
         <div class="home__actions">
-            <!-- <ng-container *ngIf="courses.length > 0; else noCourses"> -->
             <ng-container>
 
                 <div class="home__action">
@@ -36,14 +35,6 @@
                     <a routerLink="/courses">Manage Courses</a>
                 </div>
             </ng-container>
-            <!-- <ng-template #noCourses>
-                <div>
-                    <h3>No Course Available</h3>
-                    <a routerLink="/create-course">
-                        <h4>Create a Course</h4>
-                    </a>
-                </div>
-            </ng-template> -->
         </div>
     </div>
 </div>

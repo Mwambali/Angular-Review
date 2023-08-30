@@ -1,10 +1,8 @@
 footer {
+    margin-top: 1rem;
     height: 130px;
     padding: 15px;
     background-color: var(--navbar-footer-color);
-    /* position: relative;
-    bottom: 0;
-    width: 100%; */
 }
 
 .site-logo {
