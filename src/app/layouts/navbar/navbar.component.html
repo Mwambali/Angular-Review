@@ -5,48 +5,35 @@
         </div>
 
         <div class="links">
-            <!-- Manage dropdown -->
-            <button mat-icon-button [matMenuTriggerFor]="manageMenu">
-                Manage
-            </button>
-            <mat-menu #manageMenu="matMenu">
-                <button mat-menu-item routerLink="/students">Students</button>
-                <button mat-menu-item routerLink="/courses">Courses</button>
-                <button mat-menu-item routerLink="/classes">Classes</button>
-            </mat-menu>
+            <ng-container *ngIf="isHomeDirectory">
+                <button mat-icon-button class="btn btn-primary btn-cta rounded-circle">Get Started</button>
+            </ng-container>
 
-            <!-- Create dropdown -->
-            <button mat-icon-button [matMenuTriggerFor]="createMenu">
-                Create
-            </button>
-            <mat-menu #createMenu="matMenu">
-                <button mat-menu-item routerLink="/create-student">Create Student</button>
-                <button mat-menu-item routerLink="/create-course">Create Course</button>
-                <button mat-menu-item routerLink="/create-class">Create Class</button>
-            </mat-menu>
+            <ng-container *ngIf="!isHomeDirectory">
+                <button mat-icon-button routerLink="/landing">Get Started</button>
 
+
+                <button mat-icon-button [matMenuTriggerFor]="manageMenu">
+                    Manage
+                </button>
+                <mat-menu #manageMenu="matMenu" class="hoverable-dropdown">
+                    <button mat-menu-item routerLink="/students">Students</button>
+                    <button mat-menu-item routerLink="/courses">Courses</button>
+                    <button mat-menu-item routerLink="/classes">Classes</button>
+                </mat-menu>
+
+                <button mat-icon-button [matMenuTriggerFor]="createMenu">
+                    Create
+                </button>
+                <mat-menu #createMenu="matMenu" class="hoverable-dropdown">
+                    <button mat-menu-item routerLink="/create-student">Create Student</button>
+                    <button mat-menu-item routerLink="/create-course">Create Course</button>
+                    <button mat-menu-item routerLink="/create-class">Create Class</button>
+                </mat-menu>
+            </ng-container>
         </div>
         <div class="user">
             <app-user-dropdown></app-user-dropdown>
         </div>
     </div>
 </mat-toolbar>
-
-
-
-
-<!-- <nav class=" navbar navbar-expand-lg fixed-top ">
-
-    <div class="container">
-        <div class=" collapse navbar-collapse justify-content-center">
-            <ul class=" navbar-nav ">
-                <li class=" nav-item ml-3"><a href="" class="nav-link">Design</a></li>
-                <li class=" nav-item ml-3"><a href="" class="nav-link">Inspiration</a></li>
-                <li class=" nav-item ml-3"><a href="" class="nav-link">Politics</a></li>
-                <li class=" nav-item ml-3"><a href="" class="nav-link">Electro-Mechanics</a></li>
-
-            </ul>
-        </div>
-    </div>
-
-</nav> -->

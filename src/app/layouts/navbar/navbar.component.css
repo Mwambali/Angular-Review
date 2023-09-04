@@ -73,3 +73,16 @@ a.nav-link:hover {
 .mat-menu-item:last-child {
     border-top: 1px solid #ccc;
 }
+
+.hoverable-dropdown.mat-menu-panel-showing,
+.hoverable-dropdown:hover {
+    max-height: 500px;
+    /* Adjust this value based on your content */
+    opacity: 1;
+}
+
+/* Prevent the dropdown from disappearing when hovering over its content */
+.hoverable-dropdown.mat-menu-panel-showing .mat-menu-content,
+.hoverable-dropdown:hover .mat-menu-content {
+    display: block;
+}

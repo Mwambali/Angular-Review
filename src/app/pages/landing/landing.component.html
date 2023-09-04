@@ -5,7 +5,7 @@
 
             <h1>WHAT YOU CAN DO WITH THIS APP</h1>
             <p>
-                You can Manage your classes, Courses, Students and Generate Report createdClasses
+                You can Manage your classes, Courses, Students and Generate Report cards
                 <br>
                 It's all in one - Follow the steps below
             </p>
@@ -15,15 +15,17 @@
             <ng-container>
 
                 <div class="home__action">
+                     <a routerLink="/create-class">
+                        <button>Create a class</button>
+                    </a>
+                 </div>
+                                
+                <div class="home__action">
                     <a routerLink="/create-course">
                         <button>Create a course</button>
                     </a>
                 </div>
-                <div class="home__action">
-                    <a routerLink="/create-class">
-                        <button>Create a class</button>
-                    </a>
-                </div>
+
                 <div class="home__action">
                     <a routerLink="/create-student">
                         <button>Add a student</button>
